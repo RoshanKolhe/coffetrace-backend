@@ -46,9 +46,9 @@ app.post('/phonepe', async (req, res) => {
       merchantTransactionId: transactionId,
       merchantUserId: process.env.MERCHANT_USER_ID,
       amount: packDetails.pricing,
-      redirectUrl: `http://localhost:3000/Jh9dmUucdoV2n6en7ZW2sMY8uTx2%7C1n15ATcsmmnyRvaG8KYv%7Ccoffetraceqrid`,
-      redirectMode: 'POST',
-      callbackUrl: `http://localhost:3000/Jh9dmUucdoV2n6en7ZW2sMY8uTx2%7C1n15ATcsmmnyRvaG8KYv%7Ccoffetraceqrid`,
+      redirectUrl: `${process.env.REACT_APP_URL}/status?user=${userId}|${planId}|${transactionId}`,
+      redirectMode: 'REDIRECT',
+      callbackUrl: `${process.env.REACT_APP_URL}/status?user=${userId}|${planId}|${transactionId}`,
       mobileNumber: process.env.MERCHANT_MOBILE_NUMBER,
       paymentInstrument: {
         type: 'PAY_PAGE',
